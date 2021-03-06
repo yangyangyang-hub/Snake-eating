@@ -38,6 +38,20 @@ Snake.prototype.update =  function () {
             break;
 
     }
+
+    if(this.body[0].col >game.col-1 || this.body[0].row > game.row - 1 || this.body[0].col < 0 || this.body[0].row < 0) {
+        alert('结束游戏')
+        this.body.shift()
+        clearInterval(game.timer)
+    }
+    for (var i = 1; i< this.body.length; i++) {
+        if (this.body[0].col == this.body[i].col && this.body[0].row == this.body[i].row) {
+            alert('结束游戏')
+            this.body.shift()
+            clearInterval(game.timer)
+        }
+    }
+
     this.body.pop()
     
 }

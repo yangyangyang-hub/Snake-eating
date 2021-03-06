@@ -3,7 +3,7 @@ function Game() {
     this.col = 20;
     this.init()     // 初始化节点
     this.snake = new Snake()        // 实例化蛇
-    // this.start();
+    this.start();
     this.bindEvent();
 }
 
@@ -41,7 +41,7 @@ Game.prototype.bindEvent = function () {
         switch (event.keyCode) {
             case 37:
                 if (that.snake.direction == 'R') return
-                that.snake.changDirection('L') 
+                that.snake.changDirection('L')
                 break
             case 38:
                 if (that.snake.direction == 'D') return
@@ -59,11 +59,10 @@ Game.prototype.bindEvent = function () {
     }
 }
 
-
-
-var timer = setInterval(function () {
-    game.clear()
-    game.snake.update()
-    game.snake.render()
-
-}, 1000)
+Game.prototype.start = function () {
+    this.timer = setInterval(function () {
+        game.clear()
+        game.snake.update()
+        game.snake.render()
+    }, 1000)
+}
