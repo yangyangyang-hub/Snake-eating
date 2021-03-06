@@ -1,4 +1,5 @@
 function Game() {
+    this.score = 0
     this.row = 20;       // 行数 列数
     this.col = 20;
     this.init()     // 初始化节点
@@ -65,10 +66,16 @@ Game.prototype.bindEvent = function () {
 }
 
 Game.prototype.start = function () {
+    this.f = 0;
     this.timer = setInterval(function () {
+        game.f++
+        
+        document.getElementById('score').innerHTML = "分数：" + game.score
         game.clear()
-        game.snake.update()
+        var during = game.snake.body.length < 30 ? 30 - game.snake.body.length : 1
+        game.f % during == 0 && game.snake.update()
+        // document.getElementById('f').innerHTML = "帧编号：" + game.f % during;
         game.snake.render()
         game.food.render()
-    }, 1000)
+    }, 20)
 }
