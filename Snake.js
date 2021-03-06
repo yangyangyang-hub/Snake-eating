@@ -52,6 +52,12 @@ Snake.prototype.update =  function () {
         }
     }
 
-    this.body.pop()
+    if (this.body[0].row == game.food.row &&this.body[0].col == game.food.col) {
+        game.clear()
+        game.food = new Food(game)
+    } else {
+        this.body.pop()
+    }
+    
     
 }

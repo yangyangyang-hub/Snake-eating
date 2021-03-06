@@ -35,6 +35,7 @@ Game.prototype.clear = function () {
     for (var i = 0; i < this.row; i++) {
         for (var j = 0; j < this.col; j++) {
             this.dom.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.background = 'white'
+            this.dom.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML = ''
         }
     }
 }
