@@ -3,6 +3,7 @@ function Game() {
     this.col = 20;
     this.init()     // 初始化节点
     this.snake = new Snake()        // 实例化蛇
+    this.food = new Food(this)
     this.start();
     this.bindEvent();
 }
@@ -25,6 +26,9 @@ Game.prototype.init = function () {
 
 Game.prototype.setColor = function (row, col, color) {
     this.dom.getElementsByTagName('tr')[row].getElementsByTagName('td')[col].style.background = color
+}
+Game.prototype.setHTML = function(row, col, html) {
+    this.dom.getElementsByTagName('tr')[row].getElementsByTagName('td')[col].innerHTML = html
 }
 
 Game.prototype.clear = function () {
@@ -64,5 +68,6 @@ Game.prototype.start = function () {
         game.clear()
         game.snake.update()
         game.snake.render()
+        game.food.render()
     }, 1000)
 }
