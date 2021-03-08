@@ -1,11 +1,80 @@
-table {
-    border-collapse: collapse;
-    border: 1px solid #aaa;
+@media screen and (max-width: 540px) {
+    html{
+        font-size: 16px;
+    }
+    body {
+        background-color: red;
+        position: relative;
+    }
+    #app {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    table {
+        border-collapse: collapse;
+        border: .0625rem solid #aaa;
+        border-radius: 5px;
+        width: 90vw;
+        height: 90vw;
+    }
+    td {
+        width: 0.75rem;
+        height: 0.75rem;
+        border: .0625rem solid #aaa;
+        color: red;   
+    }
 }
-td {
-    width: 24px;
-    height: 24px;
-    border: 1px solid #aaa;
-    color: red;
-    
+@media screen and (min-width: 541px) {
+    html{
+        font-size: 16px;
+    }
+    body {
+        background-color: blue;
+        position: relative;
+    }
+    #app {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    table {
+        border-collapse: collapse;
+        border: .0625rem solid #aaa;
+        border-radius: 5px;
+    }
+    td {
+        width: 1.1rem;
+        height: 1.1rem;
+        border: .0625rem solid #aaa;
+        color: red;   
+    }
+}
+@media screen and (min-width: 970px) {
+    html{
+        font-size: 16px;
+    }
+    body {
+        background-color: pink;
+        position: relative;
+    }
+    #app {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    table {
+        border-collapse: collapse;
+        border: .0625rem solid #aaa;
+        border-radius: 5px;
+    }
+    td {
+        width: 1.5rem;
+        height: 1.5rem;
+        border: .0625rem solid #aaa;
+        color: red;   
+    }
 }
